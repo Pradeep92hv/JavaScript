@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objects</title>
+</head>
+<body>
+    
+
+    <script>
+
+       /* const product ={
+            name : 'socks',
+            price : 1090,
+            fun1(){
+            console.log(name+' '+ price);
+            }
+        };
+
+        console.log(product)
+        console.log(product.name)
+        product.name="new socks "
+
+        product.newProperty=true;
+
+        console.log(product);
+
+        delete product.newProperty;
+        console.log(product)
+        */
+
+        const product2={
+            name : "shirt",
+            ['devl-time'] : '1 day',
+             
+            rating : {
+                starts :3.5,
+                count :87
+            },
+            fun: function function1(){
+                console.log('Function inside object')
+            }
+
+        };
+        console.log(product2);
+        console.log(product2.name);
+        console.log(product2['name']);
+        console.log(product2['devl-time']);
+        console.log(product2.rating.starts);
+        product2.fun();
+
+
+        console.log(JSON.stringify(product2));   // js obj to JSON obj
+
+        let jsonString1 =JSON.stringify(product2);
+        console.log(JSON.parse(jsonString1));   // JSON obj to js Obj
+
+
+        
+        
+    </script>
+</body>
+</html>
