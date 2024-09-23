@@ -6,6 +6,9 @@
     <title>DOM projects</title>
 
     <style>
+      body{
+         font-family: Arial;
+      }
       .js-subcribe-button{
          border: none;
          background-color: black;
@@ -17,7 +20,13 @@
          font-weight: bold;
          border-radius: 50px;
          cursor: pointer;
+         margin-bottom: 30px;
 
+      }
+
+      .is-subscribed{
+        background-color: rgb(240, 240,240);
+        color: black;
       }
     </style>
  </head>
@@ -46,10 +55,14 @@
 
         console.log(buttonElement.innerHTML)
    
-       if(buttonElement.innerHTML === 'Subcribe')
+       if(buttonElement.innerHTML === 'Subcribe'){
          buttonElement.innerHTML = 'Subcribed'
-         else
+         buttonElement.classList.add("is-subscribed")   // classList used to control the class atribute
+       }
+         else{
          buttonElement.innerHTML = 'Subcribe'
+         buttonElement.classList.remove("is-subscribed")
+         }
        }
 
        function calculateTotal()
