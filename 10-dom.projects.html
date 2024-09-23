@@ -1,0 +1,75 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM projects</title>
+
+    <style>
+      .js-subcribe-button{
+         border: none;
+         background-color: black;
+         color: white;
+         padding-top: 10px;
+         padding-bottom: 10px;
+         padding-left: 15px;
+         padding-right: 15px;
+         font-weight: bold;
+         border-radius: 50px;
+         cursor: pointer;
+
+      }
+    </style>
+ </head>
+ <body>
+    <p>Youtube Subcribe Button</p>
+    <button onclick="
+   subcribe( )
+    " class="js-subcribe-button">Subcribe</button>
+
+    <p>Amazon Shipping Calculator</p>
+
+    <input type="text" name="" class="js-cost-input" placeholder="Cost of order" 
+    onkeydown="
+       handleCostKeyDown(event)
+      "
+    >
+    <button onclick="
+       calculateTotal();
+    ">Calculate</button>
+    <p class="js-total-cost"></p>
+
+    <script>
+
+       function subcribe(){
+        let buttonElement=document.querySelector('.js-subcribe-button');
+
+        console.log(buttonElement.innerHTML)
+   
+       if(buttonElement.innerHTML === 'Subcribe')
+         buttonElement.innerHTML = 'Subcribed'
+         else
+         buttonElement.innerHTML = 'Subcribe'
+       }
+
+       function calculateTotal()
+       {
+      const inputElemet = document.querySelector('.js-cost-input');
+      let cost =Number(inputElemet.value);
+      if(cost < 40)
+      cost+=10;
+      document.querySelector('.js-total-cost' ).innerHTML=`$${cost}`;
+       }
+
+       function handleCostKeyDown(event)
+       {
+        // console.log('typing')
+      console.log(event.key)
+
+      if( event.key === 'Enter')
+      calculateTotal();
+       }
+    </script>
+    
+ </body>
+ </html>
