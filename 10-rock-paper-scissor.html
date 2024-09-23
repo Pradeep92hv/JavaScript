@@ -75,13 +75,13 @@
 
     <button
       onclick="
-      playerGame('scissor');" class="move-button" 
+      playerGame('scissors');" class="move-button" 
     >
     <img src="images/scissors-emoji.png" class="move-icon" alt="" srcset="">
     </button>
 
 
-    <p class="js-result result">You Win.</p>
+    <p class="js-result result"></p>
 
     <p class="js-moves"> You 
       <img src="images/paper-emoji.png" class="move-icon" alt="" srcset="">
@@ -120,7 +120,7 @@
         } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
           computerMove = "paper";
         } else {
-          computerMove = "scissor";
+          computerMove = "scissors";
         }
 
         return computerMove;
@@ -184,7 +184,10 @@
 
         document.querySelector('.js-result').innerHTML=result;
 
-        document.querySelector('.js-moves').innerHTML= ` You ${playerMove} - ${computerMove} Computet`;
+        document.querySelector('.js-moves').innerHTML= ` You 
+      <img src="images/${playerMove}-emoji.png" class="move-icon" alt="" srcset="">
+      <img src="images/${computerMove}-emoji.png" class="move-icon" alt="" srcset="">
+      Computer`;
         
 
        ; 
