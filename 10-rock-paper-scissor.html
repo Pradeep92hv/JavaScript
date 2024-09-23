@@ -33,6 +33,24 @@
         margin-right: 10px;
         cursor: pointer;
       }
+
+      .result{
+        font-size: 25px;
+        font-weight: bold;
+        margin-top: 50px;
+
+      }
+
+      .score{
+        margin-top: 50px;
+      }
+      .reset-score-button{
+        background-color: white;
+        border: none;
+        font-size: 15px;
+        padding: 8px 15px;
+        cursor: pointer;
+      }
    </style>
 
   </head>
@@ -63,11 +81,15 @@
     </button>
 
 
-    <p class="js-result"></p>
+    <p class="js-result result">You Win.</p>
 
-    <p class="js-moves"></p>
+    <p class="js-moves"> You 
+      <img src="images/paper-emoji.png" class="move-icon" alt="" srcset="">
+      <img src="images/paper-emoji.png" class="move-icon" alt="" srcset="">
+      Computer
+    </p>
    
-    <p class="js-score"></p>
+    <p class="js-score score"></p>
     
     <button onclick="
      score.wins=0;
@@ -75,7 +97,7 @@
      score.ties=0;
      localStorage.removeItem('score');
      updateScore();
-    ">Reset Score</button>
+    " class="reset-score-button">Reset Score</button>
 
     <script>
 
