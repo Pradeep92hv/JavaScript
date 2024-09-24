@@ -1,6 +1,11 @@
 const todoList=[];
 
-
+function deleteTodo(i)
+{
+    console.log(todoList[i]);
+    todoList.splice(i,1);
+    renderTodoList();
+}
 
 function renderTodoList()
 {
@@ -8,10 +13,13 @@ function renderTodoList()
     for(let i=0;i<todoList.length;i++)
         {
             const todo=todoList[i];
-            const html=`<p>${todo}</p>`;
+            const html=`
+            <p>${todo}
+            <button onclick=" deleteTodo(${i}) ">Delete </button></p>
+            `;
             todoListHtml+=html;
         }
-        console.log(todoListHtml)
+       // console.log(todoListHtml)
         document.querySelector('.js-todo-list').innerHTML=todoListHtml;
 }
 
