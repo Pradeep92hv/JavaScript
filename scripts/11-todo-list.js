@@ -1,8 +1,15 @@
-const todoList=[];
+const todoList=[{
+    name: 'a',
+    dueDate: '2022-12-12'
+}, {
+    name: 'b',
+    dueDate: '2023-12-12'
+}
+];
 
 function deleteTodo(i)
 {
-    console.log(todoList[i]);
+  
     todoList.splice(i,1);
     renderTodoList();
 }
@@ -12,14 +19,18 @@ function renderTodoList()
     let todoListHtml='';
     for(let i=0;i<todoList.length;i++)
         {
-            const todo=todoList[i];
+            const todoObject=todoList[i];
+
+            const name=todoObject.name;
+            const dueDate=todoObject.dueDate;
+
             const html=`
-            <p>${todo}
+            <p>${name} ${dueDate}
             <button onclick=" deleteTodo(${i}) ">Delete </button></p>
             `;
             todoListHtml+=html;
         }
-       // console.log(todoListHtml)
+      
         document.querySelector('.js-todo-list').innerHTML=todoListHtml;
 }
 
@@ -29,8 +40,14 @@ function addTodo(){
    const name=inputElement.value;
    inputElement.value='';
 
-   todoList.push(name);
-   console.log(todoList);
+   const dateInpute=document.querySelector('.js-date-input');
+   const duedate=dateInpute.value;
+   
+   todoList.push({
+    name:name,
+    dueDate :duedate
+   });
+  
     renderTodoList();
 
 }
