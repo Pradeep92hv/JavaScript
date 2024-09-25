@@ -1,0 +1,33 @@
+.todo-grid,
+.todo-list-grid {
+    display: grid;
+    grid-template-columns: 200px 150px 100px;  /* Define columns for name, dueDate, and button */
+    gap: 10px;  /* Adds some spacing between columns */
+    align-items: center;
+}
+
+.todo-item {
+    display: contents; /* Ensures the individual items fit into the grid */
+}
+
+.add-button{
+    background-color: green;
+    color: white;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.delete-button{
+    background-color: darkred;
+    color: white;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.todo-list-grid{
+    align-items: stretch;
+}

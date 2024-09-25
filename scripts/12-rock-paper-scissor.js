@@ -97,9 +97,26 @@ document.querySelector('.js-score').innerHTML=`Wins: ${score.wins}, Losses : ${s
 }
 
 
+
+let isAutoPlaying= false;
+
+let intervalId;
 function autoPlay(){
-  setInterval(function(){
+  if(!isAutoPlaying)
+  {
+    intervalId=setInterval(function()
+  {
     const playerMove= pickComputerMove();
     playerGame(playerMove);
   },1000)
+
+  isAutoPlaying=true;
+  }
+  else{
+
+    clearInterval(intervalId);
+    isAutoPlaying=false;
+
+  }
+  
 }
