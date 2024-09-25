@@ -8,7 +8,7 @@
 <body>
 
     <script>
-        function greeting(){
+      /*  function greeting(){
             console.log("hello");
         }
         greeting();
@@ -46,6 +46,22 @@
         run(function(){
             console.log("function as param");
         })
+            */
+
+            setTimeout(function(){
+                console.log('timeout function ')
+            }, 3000);
+
+            // setTimeout()  contain 2 para,,  1st -> function,  2nd -> time in mm sec
+
+            console.log("next Line");
+
+
+            // setInterval function  run at every 3sec
+            setInterval(function(){
+                console.log("Interval")
+            }, 3000 );
+
     </script>
     
 </body>
