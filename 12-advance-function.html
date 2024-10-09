@@ -6,8 +6,27 @@
     <title>Advance Function</title>
 </head>
 <body>
+    <button onclick=" " class="js-button">Click</button>
 
     <script>
+
+       const buttonElement = document.querySelector('.js-button');
+
+       const eventListener = () => {
+        console.log("clicked");}
+
+       buttonElement.addEventListener('click',eventListener);   // 1st param ->  type of event, 2nd -> function
+
+       
+
+       buttonElement.addEventListener('click',() => {
+        console.log("clicked2")
+       });
+
+       
+
+       buttonElement.removeEventListener('click',eventListener)
+
       /*  function greeting(){
             console.log("hello");
         }
@@ -67,7 +86,7 @@
             */
 
         
-
+    /*
 
     // foreach
     [
@@ -91,7 +110,7 @@
         console.log(parm1+parm2)
     }
     arrowfuction1(6,8);
-
+  */
    
     </script>
     
