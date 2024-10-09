@@ -21,7 +21,33 @@ function pickComputerMove() {
  }
 
  return computerMove;
-}
+}   
+
+/*
+document.body.addEventListener('keydown',() => {
+  console.log('keydown')
+})
+  
+
+document.body.addEventListener('keydown',(event) => {
+  console.log(event.key);
+})
+
+*/
+
+document.body.addEventListener('keydown',(event) => {
+  if(event.key === 'r'){
+    playerGame('rock');
+  }else if(event.key === 'p'){
+    playerGame('paper');
+  }else{
+    playerGame('scissors');
+  }
+
+})
+
+
+
 
 document.querySelector('.js-rock-button')
 .addEventListener('click',() => {
