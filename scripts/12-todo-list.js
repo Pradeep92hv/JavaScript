@@ -12,13 +12,14 @@ function deleteTodo(i)
   
     todoList.splice(i,1);
     renderTodoList();
+    
 }
 
 function renderTodoList()
 {
     let todoListHtml='';
 
-    todoList.forEach(function(todoObject,index){
+    todoList.forEach((todoObject,index) => {
        
             const name=todoObject.name;
             const dueDate=todoObject.dueDate;

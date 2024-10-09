@@ -100,11 +100,12 @@ document.querySelector('.js-score').innerHTML=`Wins: ${score.wins}, Losses : ${s
 
 let isAutoPlaying= false;
 
+
 let intervalId;
 function autoPlay(){
   if(!isAutoPlaying)
   {
-    intervalId=setInterval(function()
+    intervalId=setInterval(() =>
   {
     const playerMove= pickComputerMove();
     playerGame(playerMove);
