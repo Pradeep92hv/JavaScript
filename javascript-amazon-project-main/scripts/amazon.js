@@ -63,8 +63,14 @@ document.querySelector('.js-prodcuts-grid').innerHTML=productsHTML
 document.querySelectorAll('.js-add-to-cart')
 .forEach((button) => {
   button.addEventListener('click', ( ) => {
-    console.log(button.dataset);
-    console.log(button.dataset.productName);
+
+    const productName =button.dataset.productName;
+    cart.push({
+      productName:productName,
+      quantity : 1
+    })
+
+    console.log(cart)
 
 
   })
