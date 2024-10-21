@@ -1,4 +1,14 @@
-export const cart=[];
+export const cart=[
+  {
+    productId :"e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
+    quantity: 2
+  },
+  {
+    productId: "aad29d11-ea98-41ee-9285-b916638cac4a",
+    quantity:1
+  }
+
+];
 
 export function addToCart(productId){
     let matchingItem='';
