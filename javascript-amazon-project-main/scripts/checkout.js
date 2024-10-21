@@ -5,6 +5,12 @@ import { removeFromCart } from "../data/cart.js";
 
 
 hello();
+const today= dayjs();
+const deliveryDate= today.add(7,'days');  // give next 7 days date,  it add 7 days,  2 paramter -> 1st number , 2nd - 'days or months or years'
+
+console.log(deliveryDate.format('dddd, MMMM D'))    // use dayjs doc or chatgpt
+
+console.log(deliveryDate)
 
 let cartSummaryHTML="";
 
