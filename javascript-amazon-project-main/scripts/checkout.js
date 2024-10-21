@@ -2,6 +2,7 @@ import { cart } from "../data/cart.js";
 import { products } from "../data/products.js";
 import { formateCurrency } from "./utils/money.js";
 import { removeFromCart } from "../data/cart.js";
+import {hello} from 'https://unpkg.com/supersimpledev@1.0.1/hello.esm.js'
 
 
 hello();
@@ -10,7 +11,7 @@ const deliveryDate= today.add(7,'days');  // give next 7 days date,  it add 7 da
 
 console.log(deliveryDate.format('dddd, MMMM D'))    // use dayjs doc or chatgpt
 
-console.log(deliveryDate)
+
 
 let cartSummaryHTML="";
 
