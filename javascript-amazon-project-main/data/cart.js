@@ -6,11 +6,13 @@ if(!cart)
   [
     {
       productId :"e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
-      quantity: 2
+      quantity: 2,
+      deliveryOptionId: '1'
     },
     {
       productId: "aad29d11-ea98-41ee-9285-b916638cac4a",
-      quantity:1
+      quantity:1,
+      deliveryOptionId: '3'
     }
   
   ];
@@ -39,7 +41,8 @@ export function addToCart(productId){
       {
         cart.push({
         productId:productId,
-        quantity : 1
+        quantity : 1,
+        deliveryOptionId: '1'
       })
       }
 
