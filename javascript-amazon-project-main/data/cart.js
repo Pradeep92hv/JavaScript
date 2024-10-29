@@ -75,9 +75,10 @@ export  function removeFromCart(id){
             matchingItem = cartItem; // If found, assign the cartItem object
         }
     });
-    
-    if (matchingItem) { // Only proceed if a matching item was found
+   
         matchingItem.deliveryOptionId = deliveryOptionId;
-        saveToLocalStorage(); // Ensure function name has correct capitalization
-    } 
+         
+        saveToLOcalStorage();
+         // Ensure function name has correct capitalization
+    
 }

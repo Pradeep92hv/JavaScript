@@ -150,6 +150,11 @@ document.querySelectorAll('.js-delete-link')
 
 document.querySelectorAll('.js-delivery-option')
 .forEach((element) =>{
-  const {productId,deliveryOptionId}=element.dataset;
-  updateDeliveryOption(productId.deliveryOptionId)
+  element.addEventListener('click',() =>{
+      const {productId,deliveryOptionId}=element.dataset;
+  
+  updateDeliveryOption(productId,deliveryOptionId)
+  });
+  
+   
 });
