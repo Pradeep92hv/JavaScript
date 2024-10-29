@@ -2,16 +2,12 @@ import { cart } from "../../data/cart.js";
 import { products } from "../../data/products.js";
 import { formateCurrency } from "../utils/money.js";
 import { removeFromCart, updateDeliveryOption } from "../../data/cart.js";
-import { hello } from "https://unpkg.com/supersimpledev@1.0.1/hello.esm.js"; // named export
 import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js"; // default export
 import { deliveryOptions,getDeliveryOption } from "../../data/deliveryOptions.js";
 import { getProduct } from "../../data/products.js";
+import { renderPaymentSummary } from "./paymentsummary.js";
+ 
 
-hello();
-const today = dayjs();
-const deliveryDate = today.add(7, "days"); // give next 7 days date,  it add 7 days,  2 paramter -> 1st number , 2nd - 'days or months or years'
-
-console.log(deliveryDate.format("dddd, MMMM D")); // use dayjs doc or chatgpt
 
 export function renderOderSummary() {
   let cartSummaryHTML = "";
@@ -119,15 +115,16 @@ export function renderOderSummary() {
 
       const productId = link.dataset.productId;
       removeFromCart(productId);
+      
 
       console.log(cart);
       const container = document.querySelector(
         `.js-cart-item-container-${productId}`
       );
 
-      console.log(productId);
-      console.log(container);
+      
       container.remove();
+      renderPaymentSummary();
     });
   });
 
@@ -137,6 +134,8 @@ export function renderOderSummary() {
 
       updateDeliveryOption(productId, deliveryOptionId);
       renderOderSummary();
+      renderPaymentSummary();
+       
     });
   });
 }
