@@ -13,7 +13,7 @@ const deliveryDate= today.add(7,'days');  // give next 7 days date,  it add 7 da
 
 console.log(deliveryDate.format('dddd, MMMM D'))    // use dayjs doc or chatgpt
 
-
+function renderOderSummary(){
 
 let cartSummaryHTML="";
 
@@ -154,8 +154,12 @@ document.querySelectorAll('.js-delivery-option')
       const {productId,deliveryOptionId}=element.dataset;
   
   updateDeliveryOption(productId,deliveryOptionId)
+  renderOderSummary();
   });
   
    
 });
+}
 //
+
+renderOderSummary();
