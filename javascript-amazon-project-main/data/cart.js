@@ -65,3 +65,19 @@ export  function removeFromCart(id){
 
     saveToLOcalStorage();
   }
+
+
+  export function updateDeliveryOption(productId, deliveryOptionId) {
+    let matchingItem = null; // Use null to represent no match found
+    
+    cart.forEach((cartItem) => {
+        if (productId === cartItem.productId) {
+            matchingItem = cartItem; // If found, assign the cartItem object
+        }
+    });
+    
+    if (matchingItem) { // Only proceed if a matching item was found
+        matchingItem.deliveryOptionId = deliveryOptionId;
+        saveToLocalStorage(); // Ensure function name has correct capitalization
+    } 
+}
