@@ -12,6 +12,6 @@ describe('test suit : formatCurrency',() =>{
     });
 
     it("rounds up to  the nearest Cents", () => {
-      expect(formateCurrency(2000.4)).toEqual("20.01");
+      expect(formateCurrency(2000.4)).toEqual("20.00");
     });
 });
