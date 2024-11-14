@@ -27,6 +27,7 @@ export function renderOderSummary() {
     const dateString = deliveryDate.format("dddd, MMMM D");
 
     cartSummaryHTML += ` <div class="cart-item-container 
+    js-cart-item-container
     js-cart-item-container-${matchingProduct.id}">
             <div class="delivery-date">
               Delivery date: ${dateString}
@@ -43,7 +44,7 @@ export function renderOderSummary() {
                 <div class="product-price">
                   $${formateCurrency(matchingProduct.priceCents)}
                 </div>
-                <div class="product-quantity">
+                <div class="product-quantity js-product-quantity-${matchingProduct.id}">
                   <span>
                     Quantity: <span class="quantity-label">${
                       cartItem.quantity
